@@ -10,7 +10,10 @@
     "test": "vitest run ./src --coverage",
     "test:watch": "vitest watch ./src",
     "lint": "eslint ./src --ext .ts,.js",
-    "format": "prettier --write ./src"
+    "format": "prettier --write ./src",
+    "publish": "clean-publish",
+    "prepublishOnly": "rm -rf ./package && clean-publish",
+    "postpublish": "rm -rf ./package"
   },
   "keywords": [],
   "author": "komlev",
@@ -46,13 +49,21 @@
     "defaults and fully supports es6-module",
     "maintained node versions"
   ],
+  "publishConfig": {
+    "main": "./lib/index.umd.cjs",
+    "module": "./lib/index.js",
+    "directory": "package"
+  },
   "clean-publish": {
     "withoutPublish": true,
     "files": [
-      "lib",
-      "package.json",
-      "README.md",
-      "LICENSE"
+      ".gitignore",
+      ".prettierignore",
+      "coverage",
+      "LICENSE",
+      "src",
+      "tsconfig.json",
+      "vite.config.js"
     ],
     "tempDir": "package"
   }
