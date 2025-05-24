@@ -1,6 +1,6 @@
 {
   "name": "dicee",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Dice utility library",
   "type": "module",
   "main": "./lib/index.umd.cjs",
