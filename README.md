@@ -1,0 +1,2 @@
+# dicee
+Dice utility library
