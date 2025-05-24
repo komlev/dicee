@@ -5,6 +5,14 @@
   "type": "module",
   "main": "./lib/index.umd.cjs",
   "module": "./lib/index.js",
+  "sideEffects": false,
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/komlev/dicee.git"
+  },
   "scripts": {
     "build": "tsc && vite build",
     "test": "vitest run ./src --coverage",
