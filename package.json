@@ -1,0 +1,59 @@
+{
+  "name": "dicee",
+  "version": "0.0.5",
+  "description": "Dice utility library",
+  "type": "module",
+  "main": "./lib/index.umd.cjs",
+  "module": "./lib/index.js",
+  "scripts": {
+    "build": "tsc && vite build",
+    "test": "vitest run ./src --coverage",
+    "test:watch": "vitest watch ./src",
+    "lint": "eslint ./src --ext .ts,.js",
+    "format": "prettier --write ./src"
+  },
+  "keywords": [],
+  "author": "komlev",
+  "license": "ISC",
+  "packageManager": "pnpm@10.11.0",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.umd.cjs"
+    }
+  },
+  "types": "./lib/index.d.ts",
+  "dependencies": {
+    "nanoid": "^5.1.5",
+    "seed-random": "^2.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.27.0",
+    "@types/seed-random": "^2.2.4",
+    "@vitest/coverage-v8": "^3.1.4",
+    "clean-publish": "^5.2.0",
+    "eslint": "^9.27.0",
+    "eslint-config-prettier": "^10.1.5",
+    "globals": "^16.1.0",
+    "prettier": "3.5.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.1",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^3.1.4"
+  },
+  "browserslist": [
+    "defaults and fully supports es6-module",
+    "maintained node versions"
+  ],
+  "clean-publish": {
+    "withoutPublish": true,
+    "files": [
+      "lib",
+      "package.json",
+      "README.md",
+      "LICENSE"
+    ],
+    "tempDir": "package"
+  }
+}
